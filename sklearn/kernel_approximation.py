@@ -159,6 +159,17 @@ class SkewedChi2Sampler(TransformerMixin, BaseEstimator):
         Pass an int for reproducible output across multiple function calls.
         See :term:`Glossary <random_state>`.
 
+    Attributes
+    ----------
+    random_offset_ : ndarray of shape (n_components,), dtype=float64
+        Random offset used to compute the projection in the `n_components`
+        dimensions of the feature space.
+
+    random_weights_ : ndarray of shape (n_features, n_components),\
+        dtype=float64
+        Random projection directions drawn from the Fourier transform
+        of the 'skewed chi-squared' kernel.
+
     Examples
     --------
     >>> from sklearn.kernel_approximation import SkewedChi2Sampler
